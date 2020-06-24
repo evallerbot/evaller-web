@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import SignUp from '../Components/ShareScreen';
 
 export default function GetResult(props) {
   const params = {
@@ -23,21 +24,22 @@ export default function GetResult(props) {
     }
     fetchJson();
 
-  }, []);
+  }, [params.id, params.pasteName]);
 
   return(
-    <>
-      {params.id}
-      {params.pasteName}
-			{json ? 
-      <>
-        <p>{json.code}</p>
-        <p>{json.date}</p>
-        <p>{json.lang}</p>
-        <p>{json.output}</p>
-      </> 
-      : <p>loading</p>}
-    </>
-  )
+    // <>
+    //   {params.id}
+    //   {params.pasteName}
+		// 	{json ? 
+    //   <>
+    //     <p>{json.code}</p>
+    //     <p>{json.date}</p>
+    //     <p>{json.lang}</p>
+    //     <p>{json.output}</p>
+    //   </> 
+    //   : <p>loading</p>}
+    // </>
+    <SignUp />
+  );
 
 }
