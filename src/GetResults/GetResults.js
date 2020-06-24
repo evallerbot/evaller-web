@@ -9,19 +9,34 @@ export default function GetResult(props) {
   const [ json, setJson ] = useState(undefined);
   
   useEffect(() => {
-    const url = `https://mmh.apoorvsingal.repl.co/${params.id}/${params.pasteName}`;
+    const url = `https://evaller--randomlylelo.repl.co/${params.id}/${params.pasteName}`;
+
     async function fetchJson() {
-      const result = await fetch(url);
-      console.log(result.json());
+			try {
+				const result = await fetch(url);
+				const json = await result.json();
+				setJson(json);
+        console.log(json)
+			} catch(e) {
+				console.log(e);
+			}
     }
     fetchJson();
 
-  }, [params]);
+  }, []);
 
   return(
     <>
       {params.id}
       {params.pasteName}
+			{json ? 
+      <>
+        <p>{json.code}</p>
+        <p>{json.date}</p>
+        <p>{json.lang}</p>
+        <p>{json.output}</p>
+      </> 
+      : <p>loading</p>}
     </>
   )
 
