@@ -1,19 +1,27 @@
 import React, { useState, useEffect } from 'react';
 
 export default function GetResult(props) {
-  const [ id, setId ] = useState('');
-  const [ pasteName, setPasteName ] = useState('');
+  const params = {
+    id: props.match.params.id,
+    pasteName: props.match.params.pasteName
+  }
+
+  const [ json, setJson ] = useState(undefined);
   
   useEffect(() => {
-    setId(props.match.params.id);
-    setPasteName(props.match.params.pasteName);
-  }, [props.match.params.id, props.match.params.pasteName]);
+    const url = `https://mmh.apoorvsingal.repl.co/${params.id}/${params.pasteName}`;
+    async function fetchJson() {
+      const result = await fetch(url);
+      console.log(result.json());
+    }
+    fetchJson();
+
+  }, [params]);
 
   return(
     <>
-      {id}
-      {'\n'}
-      {pasteName}
+      {params.id}
+      {params.pasteName}
     </>
   )
 
