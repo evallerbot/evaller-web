@@ -27,19 +27,11 @@ export default function GetResult(props) {
   }, [params.id, params.pasteName]);
 
   return(
-    // <>
-    //   {params.id}
-    //   {params.pasteName}
-		// 	{json ? 
-    //   <>
-    //     <p>{json.code}</p>
-    //     <p>{json.date}</p>
-    //     <p>{json.lang}</p>
-    //     <p>{json.output}</p>
-    //   </> 
-    //   : <p>loading</p>}
-    // </>
-    <SignUp />
+    <>
+			{json ? 
+      <SignUp json={json}/>
+      : <p>loading</p>}
+    </>
   );
 
 }
