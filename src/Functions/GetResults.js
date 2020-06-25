@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import SignUp from '../Components/ShareScreen';
+import CircularProgress from '@material-ui/core/CircularProgress';
 
 export default function GetResult(props) {
   const params = {
@@ -30,7 +31,7 @@ export default function GetResult(props) {
     <>
 			{json ? 
       <SignUp json={json}/>
-      : <p>loading</p>}
+      : <CircularProgress style={{ height: '50vh', width: '50vh',  }} />}
     </>
   );
 

@@ -1,5 +1,4 @@
 import Container from '@material-ui/core/Container';
-import CssBaseline from '@material-ui/core/CssBaseline';
 import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
 import React from 'react';
@@ -8,7 +7,7 @@ import Highlight from 'react-highlight.js';
 
 const useStyles = makeStyles((theme) => ({
   background: {
-    backgroundColor: '#f0f0f0',
+    backgroundColor: '#23272A',
     height: '100vh',
   },
   title: {
@@ -27,26 +26,25 @@ export default function SignUp(json) {
   return (
     <div className={classes.background}>
       <Container component="main" maxWidth="md">
-        <CssBaseline />
         <Typography variant="h2" align="center" className={classes.title}>
           Evaller Share
         </Typography>
         <Divider />
         <Typography variant="body1" className={classes.title}>
-          Here is your evalualuated Code!
+          Here is your evaluated Code!
         </Typography>
         <Typography variant="h6" className={classes.title}>
           Code Info:
         </Typography>
         <Typography variant="body1" className={classes.subHeading}>
           Written in:{' '}
-          <span style={{ backgroundColor: '#fff' }}>
+          <span style={{ backgroundColor: '#2C2F33' }}>
             {lang || 'something broke'}
           </span>
         </Typography>
         <Typography variant="body1" className={classes.subHeading}>
-          Originally saved in:{' '}
-          <span style={{ backgroundColor: '#fff' }}>
+          Originally saved at:{' '}
+          <span style={{ backgroundColor: '#2C2F33' }}>
             {Date(date * 1000) || 'something broke'}
           </span>
         </Typography>
@@ -65,18 +63,7 @@ export default function SignUp(json) {
         <Highlight language="javascript" style={{ marginTop: '0' }}>
           {output || 'something broke'}
         </Highlight>
-        <Copyright />
       </Container>
     </div>
-  );
-}
-
-function Copyright() {
-  return (
-    <Typography variant="body2" color="textSecondary" align="center">
-      {'Copyright © '}
-      Evaller {new Date().getFullYear()}
-      {'.'}
-    </Typography>
   );
 }
