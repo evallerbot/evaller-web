@@ -1,8 +1,9 @@
 import React from 'react';
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import GetResult from './Functions/GetResults';
 import { MuiThemeProvider, createMuiTheme } from "@material-ui/core/styles";
 import CssBaseline from '@material-ui/core/CssBaseline';
+
 
 // const themeLight = createMuiTheme({
 //   palette: {
@@ -31,16 +32,13 @@ export default function App() {
         <div>
           {/* A <Switch> looks through its children <Route>s and
               renders the first one that matches the current URL. */}
-          <Switch>
-            <Route exact path="/">
-              <Home />
-            </Route>
+          <Routes>
+            <Route path="/" element={<Home />} />
             <Route
-              exact
               path="/:id/:pasteName/"
               render={(props) => <GetResult {...props} />}
             />
-          </Switch>
+          </Routes>
         </div>
       </Router>
     </MuiThemeProvider>
