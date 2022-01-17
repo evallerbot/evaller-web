@@ -36,7 +36,7 @@ export default function App() {
             <Route path="/" element={<Home />} />
             <Route
               path="/:id/:pasteName/"
-              render={(props) => <GetResult {...props} />}
+              element={<GetResult />}
             />
           </Routes>
         </div>

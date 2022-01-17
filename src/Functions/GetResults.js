@@ -1,30 +1,28 @@
 import React, { useState, useEffect } from 'react';
 import SignUp from '../Components/ShareScreen';
 import CircularProgress from '@material-ui/core/CircularProgress';
+import { useParams } from 'react-router';
 
 export default function GetResult(props) {
-  const params = {
-    id: props.match.params.id,
-    pasteName: props.match.params.pasteName,
-  };
+  const { id, pasteName } = useParams();
 
   const [json, setJson] = useState(undefined);
 
   useEffect(() => {
-    const url = `https://evaller.apoorvsingal.repl.co/${params.id}/${params.pasteName}`;
+    const url = `https://evaller.apoorvsingal.repl.co/${id}/${pasteName}`;
 
     async function fetchJson() {
       try {
         const result = await fetch(url);
         const json = await result.json();
         setJson(json);
-        console.log(json);
+        // console.log(json);
       } catch (e) {
         console.log(e);
       }
     }
     fetchJson();
-  }, [params.id, params.pasteName]);
+  }, [id, pasteName]);
 
   return (
     <>
