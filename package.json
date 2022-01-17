@@ -39,6 +39,6 @@
     ]
   },
   "devDependencies": {
-    "node": "^16.13.2"
+    "node": "^17.3.1"
   }
 }
