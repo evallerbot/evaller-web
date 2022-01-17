@@ -51,13 +51,10 @@ export default function SignUp(json) {
         <Typography variant="h6" className={classes.title}>
           Code:
         </Typography>
-        <Typography variant="body1" className={classes.subHeading} >
-          Input:
-        </Typography>
         <Highlight language="javascript" style={{ marginTop: '0' }}>
           {code || 'something broke'}
         </Highlight>
-        <Typography variant="body1" className={classes.subHeading}>
+        <Typography variant="h6" className={classes.title}>
           Output:
         </Typography>
         <Highlight language="javascript" style={{ marginTop: '0' }}>

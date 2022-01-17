@@ -11,7 +11,7 @@ export default function GetResult(props) {
   const [json, setJson] = useState(undefined);
 
   useEffect(() => {
-    const url = `https://evaller--randomlylelo.repl.co/${params.id}/${params.pasteName}`;
+    const url = `https://evaller.apoorvsingal.repl.co/${params.id}/${params.pasteName}`;
 
     async function fetchJson() {
       try {
